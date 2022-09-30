@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<h1>HOME</h1>
+<form id="keywordButton" action="/openFeignHome" method="post">
+    <input type="text" id="keyword" name="keyword">
+</form>
+<button form="keywordButton" type="submit">Submit</button>
+<br>
+<table>
+    <tr>
+        <th>name</th>
+        <th>위치</th>
+    </tr>
+    <tr th:each="document : ${documents}">
+        <td th:text="${document.place_name}">이름</td>
+        <td th:text="${document.address_name}">장소</td>
+    </tr>
+</table>
+</body>
+</html>
